@@ -1,0 +1,24 @@
+GIT!!!!!! OOOOOOOOOOOO
+
+add vs commit
+
+
+git remote will tell you where teh git repository is set up
+
+strings
+
+words and shit
+
+print, strlen(blah)
+
+strcompress(blah, /remove_all)
+
+lots of different options for the funtions we are being shown, look into
+more if want to make code prettier
+
+strjoin(blah, '.') - joins strings together by a .
+
+strsplit(blah, '.') outputs the location of all the .s
+strsplit(blah, '.', /extract) pulls out the things delineated by a .
+
+repstr(string, string part, replacement part)
