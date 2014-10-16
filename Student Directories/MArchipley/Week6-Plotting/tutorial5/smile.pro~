@@ -1,0 +1,28 @@
+pro smile
+
+  ;making the circle for the face/head
+  thetaf=2*!PI*findgen(100)/100                           ;define theta as 2 times the value of pi ; use array of 100 floats (divided by 100 indicates many points)
+  rf=10                                                   ;define r (radius) as 10
+  xf=rf*cos(thetaf)                                       ;use math knowledge to define x and y
+  yf=rf*sin(thetaf)
+  plot, xf, yf                                            ;plot the circle
+
+  thetar=2*!PI*findgen(100)/100
+  rr=1
+  xr=rr*cos(thetar)+4
+  yr=rr*sin(thetar)+4
+  oplot, xr, yr
+
+  thetal=2*!PI*findgen(100)/100
+  rl=1
+  xl=rl*cos(thetal)-4
+  yl=rl*sin(thetal)+4
+  oplot, xl, yl
+
+  thetas=!PI*findgen(100)/100
+  rs=5
+  xs=-rs*cos(thetas)
+  ys=-rs*sin(thetas)
+  oplot, xs, ys
+
+end
