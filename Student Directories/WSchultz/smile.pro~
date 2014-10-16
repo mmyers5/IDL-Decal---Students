@@ -1,0 +1,32 @@
+
+
+pro draw_smiley
+
+  teta = findgen(100) * 2 * !pi / 100.
+  
+  xhead = 5 * cos(teta) + 5
+  yhead = 5 * sin(teta) + 5
+
+  xleye = .75 * cos(teta) + 3
+  yleye = .75 * sin(teta) + 6
+
+  xreye = .75 * cos(teta) + 7
+  yreye = .75 * sin(teta) + 6
+
+  xleyei = .45 * cos(teta) + 3
+  yleyei = .45 * sin(teta) + 6
+
+  xreyei = .45 * cos(teta) + 7
+  yreyei = .45 * sin(teta) + 6
+
+  xsmile = 4 * cos(teta/(-2.)) + 5
+  ysmile = 4 * sin(teta/(-2.)) + 5
+
+  loadct, 13
+  plot, xhead, yhead,title = 'Me on 10/17 - Weed', xtitle = 'Left side ... Right side... maybe', ytitle = 'Up and down... Im pretty sure about that one.'
+  oplot, xleye, yleye, color = 82
+  oplot, xreye, yreye, color = 20
+  oplot, xleyei, yleyei, color = 20
+  oplot, xreyei, yreyei, color = 82
+  oplot, xsmile, ysmile, color = 119
+end
