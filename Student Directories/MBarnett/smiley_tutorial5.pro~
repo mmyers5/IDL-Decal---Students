@@ -1,0 +1,14 @@
+pro smiley_tutorial5
+
+  theta = 2*!pi*findgen(100)/100
+  
+  r_circle = 10
+  
+  x = r_circle*cos(theta)
+  y = r_circle*sin(theta)
+  
+  ;print, theta
+  ;print, x
+  ;print, y
+
+end
