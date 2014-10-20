@@ -1,0 +1,11 @@
+pro homework2
+  readcol, 'three.txt', leaf, bud, flower, format='A,A,A', delimiter=',';readcol the txt file
+  answers=MAKE_ARRAY(31, /string, VALUE = 0)
+  for n= 0, 30 do begin
+     response=''
+     read, 'Please provide a'+flower[n], response
+     answers[n]=response
+  endfor
+save, answers, filename='answers.sav'
+print, answers
+end
