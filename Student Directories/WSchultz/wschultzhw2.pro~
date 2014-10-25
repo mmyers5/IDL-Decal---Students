@@ -1,0 +1,30 @@
+function madlib
+
+  readcol, 'three.txt', col1, col2, col3, format='A,A,A',delim=','
+
+  outline = [[col1],[col2],[col3]]
+  
+  return, outline
+end
+
+function input, outline
+  answers = makearray(n_elements(outline[2])-1, type=7)
+  for k=0, n_elements(outline[2])-1 DO BEGIN
+     response = ''
+     read, "Please provide a "+outline[2,k], response
+     answers[k] = response
+  endfor
+  save, answers, filename = 'answers.sav'
+  return, answers
+end
+
+function mix, outline, answers
+  lol = [[outlines[0:*]],[outlines[1:*]],[answers]]
+  return, lol
+end
+
+pro printresult, lol
+  for i=0, n_elements(lol[1:*]) DO BEGIN
+     print, lol[0,k], lol[1,k], lol[2,k]
+  endfor
+end

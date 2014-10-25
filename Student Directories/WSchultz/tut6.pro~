@@ -1,0 +1,8 @@
+
+function x_vector, xvals
+  xcol = transpose(xvals)
+  return xcol
+end
+
+function find_coeffs, xcol, yvals
+  
