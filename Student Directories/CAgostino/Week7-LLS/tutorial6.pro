@@ -22,6 +22,7 @@ function regressthing, xprime, Avector
 	
 end
 ; none of these work with it
+;jk
 pro main
 	readcol, "data.dat", x,y, format = 'F,F'
 ;	x_prime = x_vector(x)
@@ -34,6 +35,6 @@ pro main
 	y_prime = regressthing(x_prime, coeffs) 
 	plot, x,y, psym =1, title='helya', xtitle='x vals', ytitle='y vals'
 	oplot, x, y_prime
-	oplot, x, coeffs[0]*x 
+	oplot, x, coeffs[0]*x + coeffs[1]
 	psclose
 end
