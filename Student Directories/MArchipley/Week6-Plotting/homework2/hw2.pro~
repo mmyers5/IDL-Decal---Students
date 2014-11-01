@@ -1,0 +1,95 @@
+function step2
+  readcol, 'one.txt', col1, col2, col3, format='A,A,A',delim=','
+                                ;read in the one.txt file and assign
+                                ;first three columns to vari;ables and
+                                ;format each column as strings separated
+                                ;by commas
+
+  step2array = [[col1],[col2],[col3]]   
+                                ;define array as the first three columns that we read in
+  step2arrayT = transpose(step2array)
+                                ;transpose array to get proper
+                                ;orientation (three columns instea;d of
+                                ;three rows)
+
+  return, 0
+                                ;all functions must return something,
+                                ;but I don't want to reveal these columns
+end
+
+
+function step3
+  readcol, 'one.txt', col1, col2, col3, format='A,A,A',delim=','
+  step3col3 = [col3]
+  userinput = ''
+                                ;read in the text file again so we can reference it in the for
+                                ;loop, define it as a variable
+  answers = make_array(32, /string)
+                                ;make an empty array of strings for the for loop to fill
+  for i=0, n_elements([col3])-1 do begin
+     read, "Please provide a "+step3col3[i], userinput
+     answers[i] = userinput
+  endfor
+                                ;for loop starts at 0 and goes for all elements in column
+                                ;three, reads the data and says "Please provide a
+                                ;(space)(values from col3 beginning at index i)", saves these
+                                ;results as variable answers
+
+  save, answers, filename = 'answersfile.sav'
+                                ;saves the user input as a file
+
+  return, 0
+end
+
+
+function step4
+  answers = step3()             ;define answers in this function referencing step3
+  readcol, 'one.txt', col1, col2, col3, format='A,A,A',delim=','
+                                ;read in the columns so we can reference
+                                ;these variables again
+  sentences = [[col1],[answers],[col2]]
+                                ;make an array according to the directions
+  sentencesT = transpose(sentences)
+                                ;transpose the array to get the columns
+                                ;and rows correct
+  return, sentencesT
+                                ;return the completed array
+end
+
+
+pro step5
+  sentences = step4()
+  readcol, 'one.txt', col1, col2, col3, format='A,A,A',delim=','
+
+  for i=0, n_elements([col3])-1 do begin
+     print, sentences[i, 1], sentences[i, 2], sentences[i, 3]
+  endfor
+end
+
+
+pro main
+    step2final = step2()
+    print, step2final
+
+    step3final = step3()
+    print, step3final
+
+    step4final = step4()
+    print, step4final
+
+    step5final = step5
+    print, step5final
+ end
+
+
+
+
+;pro main
+;    filename = 'one.txt';set filename to reference
+;    data_array = data_reader(filename)
+;    answers = question_asker(data_array[2,*])
+;    sentences = sentence_maker(data_array[0,*], data_array[1,*],
+;    answers)
+;    sentence_reader, sentences
+;    print, step2()
+;end
