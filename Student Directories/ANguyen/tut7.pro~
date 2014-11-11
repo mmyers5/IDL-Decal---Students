@@ -1,8 +1,7 @@
 function colorzoom
-  katz=mrdfits('idl_image.fits', 0, HDR)
-  nx=700
-  ny=300
+  katz=mrdfits('/home/anguyen/ay98/github/Resources/Week8-Images/idl_image.fits', 0, HDR)
   kathead=make_array(200, 300, /integer, value=0)
-  for nx LT 900 do begin
-  kathead(nx-700, ny-300)=katz(nx, )
-  nx++
+  kathead=katz(750:1000, 320:690)
+  display, kathead
+  return, kathead
+end
