@@ -1,0 +1,47 @@
+PRO overlord, wordBank
+
+  reading, wordBank                                          ; array made by reading procedure is called wordBank
+  answers = wordsmith(wordBank[*,2])                         ; puts prompts through wordsmith, asks for user responses
+  parsed = wordsmash(wordBank[*,0], wordBank[*,1], answers)  ; smooshes the final columns together     
+  regurgitate, parsed                                        ; cue The Final Countdown
+END
+
+PRO reading, colArray
+  
+  readcol, 'two.txt', v1, v2, v3, format = 'A,A,A', delim = ','
+  colArray = [ [v1],[v2],[v3] ]         ; indexed by [row, column]
+  RETURN
+END
+
+FUNCTION wordsmith, prompt
+  pNum = SIZE(prompt, /N_ELEMENTS) - 1                    ; grab number of prompts
+  ans = MAKE_ARRAY(pNum + 1, 1, /STRING)                  ; make array to hold answers
+  
+  FOR i = 0, pNum, 1 DO BEGIN                             ; for every prompt
+     response = ''                                        
+     read, 'Give me a ' + prompt[i] + '!: ', response     ; user prompts
+     ans[i] = response                                    ; storage into ans array
+  ENDFOR
+  
+  save, ans, filename = 'answers.sav'                     ; make savefile
+
+  RETURN, ans
+END
+
+FUNCTION wordsmash, col1, col2, ans
+  pNum = SIZE(ans, /N_ELEMENTS) - 1
+  smash = MAKE_ARRAY(pNum + 1, 3, /STRING)
+  smash[*,0] = col1
+  smash[*,1] = col2
+  smash[*,2] = ans
+  RETURN, smash
+END
+
+PRO regurgitate, final
+  
+  pNum = SIZE(final[*,2], /N_ELEMENTS) - 1
+  
+  FOR i = 0, pNum, 1 DO BEGIN
+     print, final[i,0], final[i,2], final[i,1]
+  ENDFOR
+END
