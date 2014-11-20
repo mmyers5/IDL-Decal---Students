@@ -1,0 +1,213 @@
+function movecount, byteinput  ;;counts moves made by player
+  moves = 0
+  if byteinput eq 113 or byteinput eq 119 or byteinput eq 101 or byteinput eq 97 or byteinput eq 115 or byteinput eq 100 or byteinput eq 122 or byteinput eq 120 or byteinput eq 99 THEN BEGIN
+     ;keys q,w,e,a,s,d,z,x,c
+     moves++
+  end
+  return, moves
+end
+
+function modify, board,disk,posx,posy,oldposx,oldposy  ;;function that modifies board after move is made
+  size = size(intarr(17,6)+1) ;size(oriboard)
+  boardcopy = board
+     for x = 0,4 DO BEGIN
+        board[x+posx,posy] = boardcopy[x+posx,posy] + disk[x]
+        board[x+oldposx,oldposy] = boardcopy[x+oldposx,oldposy] - disk[x]
+     end
+     oldposx = posx
+     oldposy = posy
+     display, board, xticks = size[1]+2, xticklen = 1, xrange = [0,size[1]], yticks = size[2]+2, yticklen = 1, yrange = [0,size[2]], xtickname = replicate(' ', size[1]+3), ytickname =replicate(' ', size[2]+3)
+end
+
+function checktop, board, TopNewPosx, TopCurPosx, TopCurPosy ;;dictates vertical moves of topdisk
+  ysize = 6
+  if TopCurPosy eq ysize/2 THEN BEGIN         ;if top disk is on top
+     TopNewPosy = TopCurPosy - 2
+  end
+  if TopCurPosy eq (ysize/2) - 1 THEN BEGIN   ;if top disk is in middle
+     if board[TopNewPosx+2,TopCurPosy-1] eq 0 then TopNewPosy = TopCurPosy     ;new peg has one disk
+     if board[TopNewPosx+2,TopCurPosy-1] eq 1 then TopNewPosy = TopCurPosy - 1 ;new peg has no disk
+  end
+  if TopCurPosy eq (ysize/2) - 2 THEN BEGIN   ;if top disk is in bottom
+     if board[TopNewPosx,TopCurPosy] eq 1 then TopNewPosy = TopCurPosy         ;new peg has no disk
+     if board[TopNewPosx+2,TopCurPosy] eq 0 AND board[TopNewPosx+2,TopCurPosy+1] eq 0 then TopNewPosy = TopCurPosy + 2 ;new peg has two disks
+     if board[TopNewPosx+2,TopCurPosy] eq 0 AND board[TopNewPosx+2,TopCurPosy+1] eq 1 then TopNewPosy = TopCurPosy + 1 ;new peg has one disk
+  end
+  return, TopNewPosy
+end
+
+function checkmid, board, MidNewPosx, MidCurPosx, MidCurPosy ;;dictates vertical moves of middisk
+  ysize = 6
+  if MidCurPosy eq (ysize/2) - 1 THEN BEGIN  ;if mid disk is in middle
+     if board[MidNewPosx+2,MidCurPosy-1] eq 0 then MidNewPosy = MidCurPosy     ;new peg has a disk
+     if board[MidNewPosx+2,MidCurPosy-1] eq 1 then MidNewPosy = MidCurPosy - 1 ;new peg has no disk
+  end
+  if MidCurPosy eq (ysize/2) - 2 THEN BEGIN  ;if mid disk is in bottom 
+     if board[MidNewPosx+2,MidCurPosy] eq 0 then MidNewPosy = MidCurPosy + 1   ;new peg has a disk
+     if board[MidNewPosx+2,MidCurPosy] eq 1 then MidNewPosy = MidCurPosy       ;new peg has no disk
+  end
+  return, MidNewPosy
+end
+
+pro tower
+  ;;defining disks 
+     bottomdisk = [-1,-1,-1,-1,-1]
+     middledisk = [0,-1,-1,-1,0]
+     topdisk = [0,0,-1,0,0]
+
+  ;;making the board
+     ;original board
+        xsize = 17
+        ysize = 6
+        oriboard = intarr(xsize, ysize)+1   ;array of 1s
+        size = size(oriboard)
+        moves = 0
+     ;board with pretty border (border made of 0s)
+        board = [[intarr(xsize+2,1)],[intarr(1,ysize), oriboard, intarr(1,ysize)], [intarr(xsize+2,1)]] 
+  
+  ;;starting positions       
+      TopCurPosx = (xsize-2)/5 - 2 
+      TopCurPosy = ysize/2
+      MidCurPosx = (xsize-2)/5 - 2
+      MidCurPosy = ysize/2 - 1
+      BotCurPosx = (xsize-2)/5 - 2
+      BotCurPosy = ysize/2 - 2
+
+  ;;display starting board
+     for i = 1,5 DO BEGIN    ;bottom
+        board[i,1] = 0
+     end
+     for j = 2,4 DO BEGIN    ;middle
+        board[j,2] = 0
+     end
+        board[3,3] = 0       ;top
+     display, board, title = 'Welcome!', xticks = size[1]+2, xticklen = 1, xrange = [0,size[1]], yticks = size[2]+2, yticklen = 1, yrange = [0, size[2]], xtickname = replicate(' ', size[1]+3), ytickname = replicate(' ', size[2]+3)
+
+  ;;user control
+     while 0 eq 0 DO BEGIN         ;continuously asks for input       
+          TopNewPosx = TopCurPosx  ;set "new" positions as starting positions
+          TopNewPosy = TopCurPosy
+          MidNewPosx = MidCurPosx
+          MidNewPosy = MidCurPosy
+          BotNewPosx = BotCurPosx
+          BotNewPosy = BotCurPosy
+        input = get_kbrd(/escape)
+        byteinput = byte(input)
+     if byteinput eq 113 or byteinput eq 119 or byteinput eq 101 or byteinput eq 97 or byteinput eq 115 or byteinput eq 100 or byteinput eq 122 or byteinput eq 120 or byteinput eq 99 THEN BEGIN
+
+     ;MOVING TOP DISK
+        if byteinput eq 113 THEN BEGIN  ;q key
+           if TopCurPosx eq (xsize-2)/5 - 2 then begin
+              TopNewPosx = TopCurPosx
+              TopNewPosy = TopCurPosy
+           endif else begin
+              TopNewPosx = (xsize-2)/5 - 2
+              TopNewPosy = checktop(board, TopNewPosx, TopCurPosx, TopCurPosy)
+              modifytop = modify(board,topdisk,TopNewPosx,TopNewPosy,TopCurPosx,TopCurPosy)
+           endelse
+        end
+
+        if byteinput eq 119 THEN BEGIN  ;w key
+           if TopCurPosx eq (xsize-2)/5 + 4 then begin
+              TopNewPosx = TopCurPosx
+              TopNewPosy = TopCurPosy
+           endif else begin
+              TopNewPosx = (xsize-2)/5 + 4
+              TopNewPosy = checktop(board, TopNewPosx, TopCurPosx, TopCurPosy)
+              modifytop = modify(board,topdisk,TopNewPosx,TopNewPosy,TopCurPosx,TopCurPosy)
+           endelse
+        end
+        
+        if byteinput eq 101 THEN BEGIN  ;e key
+           if TopCurPosx eq (xsize-2)/5 + 10 then begin
+              TopNewPosx = TopCurPosx
+              TopNewPosy = TopCurPosy
+           endif else begin
+              TopNewPosx = (xsize-2)/5 + 10
+              TopNewPosy = checktop(board, TopNewPosx, TopCurPosx, TopCurPosy)
+              modifytop = modify(board,topdisk,TopNewPosx,TopNewPosy,TopCurPosx,TopCurPosy)
+           endelse
+        end
+
+     ;MOVING MIDDLE DISK
+        if byteinput eq 97 THEN BEGIN   ;a key
+              MidNewPosx = (xsize-2)/5 - 2
+           if board[MidCurPosx+2,MidCurPosy+1] eq 0 or board[MidNewPosx+2,MidCurPosy+1] eq 0 or MidCurPosx eq (xsize-2)/5 - 2 or (board[MidNewPosx+2,MidCurPosy] eq 0 AND board[MidNewPosx+1,MidCurPosy] eq 1) then begin  ;if something's on top,top disk is in new peg,or if already here, don't move
+              MidNewPosx = MidCurPosx
+              MidNewPosy = MidCurPosy
+           endif else begin
+              MidNewPosy = checkmid(board, MidNewPosx, MidCurPosx, MidCurPosy)
+              modifymid = modify(board,middledisk,MidNewPosx,MidNewPosy,MidCurPosx,MidCurPosy)
+           endelse
+        end
+
+        if byteinput eq 115 THEN BEGIN  ;s key
+              MidNewPosx = (xsize-2)/5 + 4
+           if board[MidCurPosx+2,MidCurPosy+1] eq 0 or board[MidNewPosx+2,MidCurPosy+1] eq 0 or MidCurPosx eq (xsize-2)/5 + 4 or (board[MidNewPosx+2,MidCurPosy] eq 0 AND board[MidNewPosx+1,MidCurPosy] eq 1) then begin
+              MidNewPosx = MidCurPosx 
+              MidNewPosy = MidCurPosy
+           endif else begin
+              MidNewPosy = checkmid(board, MidNewPosx, MidCurPosx, MidCurPosy)
+              modifymid = modify(board,middledisk,MidNewPosx,MidNewPosy,MidCurPosx,MidCurPosy)
+           endelse
+        end
+
+        if byteinput eq 100 THEN BEGIN  ;d key
+              MidNewPosx = (xsize-2)/5 + 10
+           if board[MidCurPosx+2,MidCurPosy+1] eq 0 or board[MidNewPosx+2,MidCurPosy+1] eq 0 or MidCurPosx eq (xsize-2)/5 + 10 or (board[MidNewPosx+2,MidCurPosy] eq 0 AND board[MidNewPosx+1,MidCurPosy] eq 1) then begin
+              MidNewPosx = MidCurPosx 
+              MidNewPosy = MidCurPosy
+           endif else begin 
+              MidNewPosy = checkmid(board, MidNewPosx, MidCurPosx, MidCurPosy)
+              modifymid = modify(board,middledisk,MidNewPosx,MidNewPosy,MidCurPosx,MidCurPosy)
+           endelse
+        end
+
+     ;MOVING BOTTOM DISK       
+        BotNewPosy = BotCurPosy
+        if byteinput eq 122 THEN BEGIN  ;z key
+              BotNewPosx = (xsize-2)/5 - 2
+           if board[BotCurPosx+2, BotCurPosy+1] eq 0 or board[BotNewPosx+2,BotCurPosy] eq 0 then begin ;if something's on top or if new peg has a disk, don't move
+              BotNewPosx = BotCurPosx
+           endif else begin
+              modifybot = modify(board,bottomdisk,BotNewPosx,BotNewPosy,BotCurPosx,BotCurPosy)
+           endelse
+        end
+
+        if byteinput eq 120 THEN BEGIN  ;x key
+              BotNewPosx = (xsize-2)/5 + 4
+           if board[BotCurPosx+2, BotCurPosy+1] eq 0 or board[BotNewPosx+2,BotCurPosy] eq 0 then begin
+              BotNewPosx = BotCurPosx
+           endif else begin 
+              modifybot = modify(board,bottomdisk,BotNewPosx,BotNewPosy,BotCurPosx,BotCurPosy)    
+           endelse
+        end
+
+        if byteinput eq 99 THEN BEGIN   ;c key
+              BotNewPosx = (xsize-2)/5 + 10
+           if board[BotCurPosx+2, BotCurPosy+1] eq 0 or board[BotNewPosx+2,BotCurPosy] eq 0 then begin
+              BotNewPosx = BotCurPosx 
+           endif else begin
+              modifybot = modify(board,bottomdisk,BotNewPosx,BotNewPosy,BotCurPosx,BotCurPosy)
+           endelse
+        end
+        
+     ;move counter
+        moves+= movecount(byteinput)
+        print, strcompress('Moves: ' + string(moves))
+
+     endif else BEGIN           ;if input is not any assigned key
+        print, "Not a key!"
+     endelse
+
+     ;winning condition
+     for i = 13,17 DO BEGIN
+        for j = 14,16 DO BEGIN
+           if board[i,1] eq 0 AND board[j,2] eq 0 AND board[15,3] eq 0 THEN BEGIN ;disks in winning positions
+             
+             display, board, title = 'Good Job!', xticks = size[1]+2, xticklen = 1, xrange = [0,size[1]], yticks = size[2]+2, yticklen = 1, yrange = [0, size[2]], xtickname = replicate(' ', size[1]+3), ytickname = replicate(' ', size[2]+3)
+           end
+        end
+     end
+  endwhile
+end
