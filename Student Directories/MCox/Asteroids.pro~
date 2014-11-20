@@ -1,0 +1,14 @@
+pro spaceship
+x = indgen(10)
+y = ((((1./2)*(x[4:6]))) + 3)
+plot, x, y
+;This will plot one of the lines needed to create the spaceship.
+;oplot, z
+;This woll plot the second line needed to create the spaceship.
+;oplot, q
+;This will plot the final line needed to create the spaceship.
+end
+;Once this procedure is run, the spaceship will be ploted in as a triangle.
+
+pro rocks
+end
