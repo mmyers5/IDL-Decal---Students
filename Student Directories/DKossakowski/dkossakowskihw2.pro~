@@ -1,0 +1,42 @@
+pro main
+filename = 'two.txt'
+x=file_reader(filename)
+print, x
+print, SIZE(x)
+print, SIZE(x[0,*])
+print, SIZE(x[1,*])
+print, SIZE(x[2,*])
+y=reader(x)
+print, y
+end
+
+
+function file_reader, filename
+;read the cols of the filename which are separated by ',' and they are strings
+readcol, filename, col1, col2, col3, delimiter=',', format='A,A,A'
+;create an empty 3 x n_elements(col1) string array
+col_arr = MAKE_ARRAY(3,N_ELEMENTS(col1), /STRING)
+;put the cols to corresponding col in array
+col_arr[0,*]=col1
+col_arr[1,*]=col2
+col_arr[2,*]=col3
+return, col_arr
+end
+
+function reader, in_arr
+  ;find the size of column
+  size=SIZE(in_arr[2,*])
+  ;make the answers array the same size/elements as col3
+  answers= MAKE_ARRAY(size)
+
+for i=0,i LT size-4 DO BEGIN
+   ;define response as a string before reading
+   response=''
+   ;ask the user for a response to whatever is in the 3rd row of the array
+   READ, "Please provide a " + in_arr[2,i], response
+   answers[i] = response
+ENDFOR
+;save the answers
+save, answers, filename = 'answers.sav'
+return, answers
+end

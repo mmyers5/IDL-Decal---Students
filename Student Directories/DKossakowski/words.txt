@@ -1,0 +1,98 @@
+ counting stars;	campanile;	banana smoothie;	afternoon nap;	a good fit;	airport terminal;	archery;	absolute magnitude;	#VALUE!
+ timber;	sather gate;	basil leaves;	afternoon teatime;	a little slice of paradise;	antique mall;	a lovely gesture;	absolute zero;	
+ let her go;	golden bear cafe;	bean sprout salad;	armed forces day;	access granted;	a faraway land;	beam of light;	accretion;	
+ dark horse;	crossroads;	bowl of popcorn;	all-expenses paid vacation;	a change of heart;	busy seaport city;	bluegrass music;	accretion disk;	
+ team;	cafe 3;	peanutbutter & jelly;	bachelor party;	bury the hatchet;	castle district;	checkered flag;	albedo;	
+ pompeii;	squirrels;	bran cereal;	beach party;	daily grind;	cave dwelling;	classical music;	altitude;	
+ talk dirty;	midterms;	breakfast buffet;	beautiful sunrise;	davey jones' locker;	childhood home;	college scholarship;	antimatter;	
+ drunk in love;	frat row;	cheese puffs;	centennial celebration;	did you miss me?;	city of romance;	cosmopolitan atmosphere;	aperture;	
+ happy;	unit 1;	chewy caramels;	cooking class;	don't be to sure about that;	coffee plantation;	crocheted sweater;	aphelion;	
+ all of me;	protest;	chicken tostada;	clearance sale;	free as a bird;	famous restaurant;	elaborate prank;	apogee;	
+ let it go;	dead week;	chilled eggnog;	date night;	fun for the whole family;	farmhouse;	erupting volcano;	apparent magnitude;	
+ we might be dead by tomorrow;	free speech café;	chocolate cake;	fashion show;	going dutch;	home improvement store;	exquisite taste;	asteroid;	
+ the man;	moffit;	chopped hazelnuts;	food festival;	hand over fist;	irish pub;	free in-home consultation;	astronomical unit;	
+ turn down for what;	main stacks;	crunchy pretzels;	grand finale;	have your people call my people;	italian bistro;	gift catalog;	aurora borealis;	
+ not a bad thing;	pappy’s;	delicious pastries;	halftime show;	having a green thumb;	junkyard;	going out of business sale;	azimuth;	
+ loyal;	cheeseboard;	ear of corn;	long weekend;	hitting stores now;	local bookstore;	handwoven basket;	binary system;	
+ fancy;	jupiter’s;	gala apples;	momentous occasion;	in the groove;	master bedroom;	hoarse voice;	black hole;	
+ problem ;	terrace café;	grilled scallops;	music festival;	it stands to reason;	mountain farm;	home décor;	blueshift;	
+ ain’t it fun;	doe library;	ham and cheese;	outlet shopping;	it's now or never;	peach orchard;	housework;	celestial sphere;	
+ love never felt so good;	;	healthy snack;	personal holiday;	i beg to differ;	penthouse suite;	howling wind;	cepheid variable;	
+ a sky full of stars;	;	hot herbal tea with honey and lemon;	pga tour;	i won't budge;	playground;	incredible skyline;	chromosphere;	
+ am i wrong;	;	huevos rancheros;	photography contest;	job well done;	ship's galley;	insulated thermos;	constellation;	
+ wiggle;	;	ice cream cake;	pizza party;	keep in touch;	southern ocean;	jean jacket;	cosmology;	
+ rude;	;	jawbreakers;	shopping spree;	law of averages;	storage warehouse;	junk mail;	dark matter;	
+ summer;	;	juicy pear;	spring blowout sale;	leave nothing to chance;	temperate rainforest;	leisure suit;	debris disk;	
+ stay with me;	;	kaiser rolls;	spring migration;	leave your worries behind;	trendy cafe;	letter to the editor;	doppler effect;	
+ maps;	;	loose leaf tea;	summer rainstorm;	length and width;	weight room;	lively conversation;	eccentricity;	
+ latch;	;	organic cuisine;	talent competition;	my point exactly;	wheat field;	magazine article;	eclipsing binary;	
+ chandelier;	;	potato chips & dip;	temper tantrum;	no purchase necessary;	;	minimum wage;	electromagnetic spectrum;	
+ bang bang;	;	pine nut risotto;	traditional wedding;	no small feat;	;	mink coat;	equinox;	
+ all about that bass;	;	pizza;	winter olympics;	once bitten twice shy;	;	morning brief;	event horizon;	
+ boom clap;	;	roasted pork tacos;	;	out of the blue;	;	movie ticket;	escape velocity;	
+ break free;	;	roasted turkey breast;	;	par for the course;	;	one-piece swimsuit;	galaxy;	
+ black widow;	;	spanish rice;	;	pick a number between one and ten;	;	paperback edition;	galilean moons;	
+ blank space;	;	spicy salsa;	;	pick up the pace;	;	paper cup;	geosynchronous orbit;	
+ shake it off;	;	super-sized fries;	;	prepare to unwind;	;	punching bag;	globular cluster;	
+ anaconda;	;	sweet pineapple;	;	pride and joy;	;	red bandana;	gravitational lens;	
+ don’t tell ‘em;	;	tea and crumpets;	;	quiet as a mouse;	;	rhodes scholarship;	greenhouse effect;	
+ habits (stay high);	;	thai food;	;	ready set go!;	;	safe bet;	hydrogen;	
+ rather be;	;	toasted cheese log;	;	set the wheels in motion;	;	scrap metal;	hubble's law;	
+ animals;	;	warm milk with honey;	;	skating on thin ice;	;	silver wristwatch;	hydrostatic equilibrium;	
+ hot boy;	;	;	;	some assembly required;	;	sparkling gemstones;	inclination;	
+ don’t;	;	;	;	speak of the devil;	;	suspension bridge;	interstellar medium;	
+ take me to church;	;	;	;	stew in your own juices;	;	swedish massage;	jansky;	
+ love me harder;	;	;	;	stuck in the middle;	;	ten-gallon hat;	kepler's second law;	
+;	;	;	;	sugar is sweet;	;	tire tread;	kiloparsec;	
+;	;	;	;	take lots of pictures;	;	totem pole;	kuiper belt;	
+;	;	;	;	that's the spirit;	;	travel alarm clock;	lagrange point;	
+;	;	;	;	the best is yet to come;	;	warm cozy scarf;	light year;	
+;	;	;	;	the last frontier;	;	weather report;	luminosity;	
+;	;	;	;	think fast;	;	;	lunar eclipse;	
+;	;	;	;	up up and away!;	;	;	magellanic clouds;	
+;	;	;	;	vip treatment;	;	;	meridian;	
+;	;	;	;	you don't say;	;	;	meteor shower;	
+;	;	;	;	you drive a hard bargain;	;	;	nadir;	
+;	;	;	;	you're not out of the woods yet;	;	;	neutrino;	
+;	;	;	;	you've never looked better;	;	;	nebula;	
+;	;	;	;	;	;	;	newton's third law;	
+;	;	;	;	;	;	;	nuclear fusion;	
+;	;	;	;	;	;	;	oort cloud;	
+;	;	;	;	;	;	;	open cluster;	
+;	;	;	;	;	;	;	parallax;	
+;	;	;	;	;	;	;	penumbra;	
+;	;	;	;	;	;	;	perihelion;	
+;	;	;	;	;	;	;	photosphere;	
+;	;	;	;	;	;	;	planetary nebula;	
+;	;	;	;	;	;	;	precession;	
+;	;	;	;	;	;	;	prominence;	
+;	;	;	;	;	;	;	proper motion;	
+;	;	;	;	;	;	;	protoplanetary;	
+;	;	;	;	;	;	;	quasar;	
+;	;	;	;	;	;	;	radial velocity;	
+;	;	;	;	;	;	;	redshift;	
+;	;	;	;	;	;	;	red giant;	
+;	;	;	;	;	;	;	retrograde motion;	
+;	;	;	;	;	;	;	roche limit;	
+;	;	;	;	;	;	;	singularity;	
+;	;	;	;	;	;	;	solar flare;	
+;	;	;	;	;	;	;	sprial galaxy;	
+;	;	;	;	;	;	;	stellar wind;	
+;	;	;	;	;	;	;	supergiant;	
+;	;	;	;	;	;	;	supernova remnant;	
+;	;	;	;	;	;	;	telescope;	
+;	;	;	;	;	;	;	ultraviolet;	
+;	;	;	;	;	;	;	van allen belt;	
+;	;	;	;	;	;	;	wavelength;	
+;	;	;	;	;	;	;	zenith;	
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
