@@ -55,36 +55,36 @@ number of variables.
  \begin{tabular}{ c | c | c }
  \hline
  Favorite Foods & Favorite Bands & Favorite IDL Commands \\ \hline
- Rib-Eye Steaks & Muse & oplot \\
-+ Vinaigrette Salads & Abd al Malik & return \\
-+ Spinach & Elton John & print \\ \hline
-+ \end{tabular}
-+ \caption{ Steak and Salad are the bomb, with Spinach somewhere in the mix in honor of the great legend Popeye. }
-+\end{table}
-+
-+\section{Working with a Figure}
-+I will demonstrate to you an image. 
-+\begin{figure}[H]
-+ \centering
-+ \includegraphics[width=0.5\textwidth]{plot.ps}
-+ \caption{Scatter plot of the data}
-+\end{figure}
-+
-+\section{Working with Multiple Figures}
-+I'm hungry, 'nuff said.
-+\begin{figure}[H]
-+ \centering
-+
-+ \begin{subfigure}[h!]{0.4\textwidth}
-+ \includegraphics[width=\textwidth]{ribeye.jpg}
-+ \caption{One half of a well-balanced meal}
-+ \end{subfigure}
-+ ~
-+ \begin{subfigure}[h!]{0.4\textwidth}
-+ \includegraphics[width=\textwidth]{salad.jpg}
-+ \caption{The other half of a well-balanced meal}
-+ \end{subfigure}
-+ \caption{The best things in life}
-+
-+\end{figure}
-+\end{document}
+ Indian Curry & Metallica & transpose \\
+ Pizza & The Ramones & findgen \\
+ Burger & Guns N' Roses & cp \\ \hline
+\end{tabular}
+ \caption{I like several other items from each category, but those are my favorites.}
+\end{table}
+
+\section{Working with a Figure}
+Here is an image. 
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=0.5\textwidth]{plot.ps}
+ \caption{Scatter plot of the data. I liked the fact that how this tutorial generated a nice scatter plot, and I disliked that it was hard to fit the line of best fit}
+\end{figure}
+
+\section{Working with Multiple Figures}
+
+\begin{figure}[H]
+ \centering
+
+ \begin{subfigure}[h!]{0.5\textwidth}
+ \includegraphics[width=\textwidth]{/home/mkhan/ay98/Desktop/milky way.jpg}
+ \caption{Beautiful picture of our Milky Way Galaxy}
+ \end{subfigure}
+ ~
+ \begin{subfigure}[h!]{0.5\textwidth}
+ \includegraphics[width=\textwidth]{/home/mkhan/ay98/Desktop/whirlpool galaxy.jpg}
+ \caption{Picture of whirlpool galaxy}
+ \end{subfigure}
+ \caption{Two good looking galaxies}
+
+\end{figure}
+\end{document}
