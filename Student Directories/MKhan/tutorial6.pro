@@ -23,11 +23,14 @@ function y_vector, datafile
 
   return, y
 
+endfor
+
 end
+
 
 function find_coeffs, xprime, y
 
-  transxprime = transpose(xprime)                     ; calculates the tranpose of xprime
+  transxprime = transpose(xprime)                     ; calculates the transpose of xprime
   A = y # (transxprime # invert(xprime # transxprime)) 
  
   return, A
@@ -42,7 +45,9 @@ function regress, xprime, A
 
 end
 
-pro mainlls
+pro mainlls, y_vector
+
+psopen, 'plot.ps', xsize=5, ysize=5
 
   datafile = 'data.dat'
   readcol, 'data.dat', col1, col2, format = 'F, F'
@@ -54,6 +59,10 @@ pro mainlls
   graphtitle = 'y = ' + string(Aarray[0]) + 'x ' + string(Aarray[1]) 
 
   plot, col1, col2, psym = 3, xtitle = 'X-values', ytitle = 'Y-values', title = graphtitle ; plots scatter plot of data
-  plot, yprimearray, LINESTYLE = 0, THICK = 2    ; plots line of best fit
+  oplot, yprimearray, LINESTYLE = 0, THICK = 2    ; plots line of best fit
+
+psclose
 
 end
+
+
