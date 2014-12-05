@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage{caption}
+
+\title{Tutorial 8: Doing Func-y Things}
+\author{Michelle Myers}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{IDL and Python}
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{ l | l }
+    \hline
+    \textbf{IDL} & \textbf{Python} \\ \hline
+    n\verb!_!elements( expression ) & len( expresion ) \\ \hline
+    intarr( (shape) ) & numpy.zeros( (shape) ) \\ \hline
+    if x GT 1 do begin & if x \verb!>! 1: \\ 
+    \hspace{5 mm}print, x & \hspace{5 mm}print(x) \\ 
+    endif
+  \end{tabular}
+  \caption{ This table displays IDL functions alongside their corresponding Python functions. }
+\end{table}
+
+\end{document}
