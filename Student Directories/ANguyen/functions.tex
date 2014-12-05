@@ -1,0 +1,209 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% HEADER
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,twoside,10pt]{report}
+
+% Alternative Options:
+
+% Paper Size: a4paper / a5paper / b5paper / letterpaper / legalpaper /
+% executivepaper
+
+% Duplex: oneside / twoside
+
+% Base Font Size: 10pt / 11pt / 12pt
+
+
+
+
+
+%% Language %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[USenglish]{babel} %francais, polish, spanish, ...
+
+\usepackage[T1]{fontenc}
+
+\usepackage[ansinew]{inputenc}
+
+
+
+\usepackage{lmodern} %Type1-font for non-english texts and characters
+
+
+
+
+
+%% Packages for Graphics & Figures %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx} %%For loading graphic files
+
+%\usepackage{subfig} %%Subfigures inside a figure
+
+%\usepackage{pst-all} %%PSTricks - not useable with pdfLaTeX
+
+
+
+%% Please note:
+
+%% Images can be included using \includegraphics{Dateiname}
+
+%% resp. using the dialog in the Insert menu.
+
+%% 
+
+%% The mode "LaTeX => PDF" allows the following formats:
+
+%%   .jpg  .png  .pdf  .mps
+
+%% 
+
+%% The modes "LaTeX => DVI", "LaTeX => PS" und "LaTeX => PS => PDF"
+
+%% allow the following formats:
+
+%%   .eps  .ps  .bmp  .pict  .pntg
+
+
+
+
+
+%% Math Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{amsfonts}
+
+
+
+
+
+%% Line Spacing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{setspace}
+
+%\singlespacing        %% 1-spacing (default)
+
+%\onehalfspacing       %% 1,5-spacing
+
+%\doublespacing        %% 2-spacing
+
+
+
+
+
+%% Other Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{a4wide} %%Smaller margins = more text per page.
+
+%\usepackage{fancyhdr} %%Fancy headings
+
+%\usepackage{longtable} %%For tables, that exceed one page
+
+%\numberwithin{equation}{section}
+
+\setcounter{secnumdepth}{0}
+
+\usepackage{float}
+
+%\usepackage[lofloat]{subfig}
+
+\usepackage{caption}
+\usepackage{subcaption}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Remarks
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+
+% TODO:
+
+% 1. Edit the used packages and their options (see above).
+
+% 2. If you want, add a BibTeX-File to the project
+
+%    (e.g., 'literature.bib').
+
+% 3. Happy TeXing!
+
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Options / Modifications
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%\input{options} %You need a file 'options.tex' for this
+
+%% ==> TeXnicCenter supplies some possible option files
+
+%% ==> with its templates (File | New from Template...).
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% DOCUMENT
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%% Title Page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% ==> Write your text here or include other files.
+
+
+
+%% The simple version:
+
+\title{Homework 3}
+\date{\today}
+\author{Alex Nguyen}
+%\usepackage{epstopdf}
+%\epstopdfsetup{update}
+%\DeclareGraphicsExtensions{.ps}
+%\epstopdfDeclareGraphicsRule{.ps}{pdf}{.pdf}{ps2pdf -dEPSCrop -dNOSAFER
+%  #1 \OutputFile}
+\begin{document}
+\begin{figure}
+\centering
+\includegraphics{tut8_image1.png}
+\caption{n \_ elements, courtesy of exelis}
+\end{figure}
+\section{len(s)}
+Returns number of items in object s
+\section{intarr(n, m)}
+Creates an n by m element integer array where all elements equal 0
+\section{zeros((n,m))}
+Creates an n by m element integer array where all elements equal 0
+\section{if x GT 1 do begin \\
+     \indent print, x \\
+  endif}
+If you give it an x that is bigger than 1 it will print it.
+\section{if x>1: \\
+       \indent print x}
+If you give it an x that is bigger than 1 it will print it.
+\end{document}
