@@ -4,6 +4,6 @@ def the_final_countdown():
 
     numArray = np.arange(101)
     for num in numArray:
-        print num
+        print 100 - num
 
     return
